@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import UniversityLogo from '../assets/unej.jpg'; // Add the actual logo of the university
+import BpmFmipaLogo from '../assets/bpm.jpg'; // Add the actual logo for BPM FMIPA
 
 const BeakerIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -43,21 +45,16 @@ const experiences = [
     company: 'Department of Chemistry, University of Jember',
     title: 'Laboratory Assistant',
     duration: '2023 - 2024',
-    description: 'Operated chemical instruments such as UV-VIS Spectrophotometer, AAS, FTIR, and XRF. Prepared practical requirements, assisted lecturers in managing activities, and coordinated in evaluating student performance for 80 students.'
+    description: 'Operated chemical instruments such as UV-VIS Spectrophotometer, AAS, FTIR, and XRF. Prepared practical requirements, assisted lecturers in managing activities, and coordinated in evaluating student performance for 80 students.',
+    logo: UniversityLogo,
   },
   {
     id: 2,
-    company: 'Universitas JEMBER',
-    title: 'Sarjana\'s Thesis Researcher',
-    duration: '2024',
-    description: 'Conducted virtual screening for Estrogen Receptor Inhibitor Compound Alpha (ERα) using Quantitative Structure Activity Relationship (QSAR). Analyzed new inhibitor candidates for breast cancer drugs using virtual screening-based machine learning.'
-  },
-  {
-    id: 3,
     company: 'BADAN PERWAKILAN MAHASISWA FMIPA',
     title: 'Head of Commission 1 Aspiration',
     duration: 'Feb 2023 - Dec 2022',
-    description: 'Managed work programs related to increasing aspiration absorption within the FMIPA environment. Successfully collected over 100 aspirations from students, contributing to faculty improvement and development.'
+    description: 'Managed work programs related to increasing aspiration absorption within the FMIPA environment. Successfully collected over 100 aspirations from students, contributing to faculty improvement and development.',
+    logo: BpmFmipaLogo,
   },
 ];
 
@@ -114,8 +111,8 @@ const About = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <div className="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
-                    <img src="/api/placeholder/48/48" alt={`${exp.company} logo`} className="w-full h-full object-cover" />
+                  <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-100 border border-gray-300">
+                    <img src={exp.logo} alt={`${exp.company} logo`} className="w-full h-full object-contain p-1" />
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold text-gray-800">{exp.title}</h4>
