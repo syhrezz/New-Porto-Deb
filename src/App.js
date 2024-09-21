@@ -2,10 +2,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import Header from "./components/Header";
 import About from "./components/About";
-import Projects from "./components/Projects";
+// import Projects from "./components/Projects";
 import ChemicalScience from "./components/ChemicalScience";
-import Contact from "./components/Contact";
-// import Footer from "./components/Footer";
+// import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -19,12 +19,12 @@ const App = () => {
       >
         {/* <Intro /> */}
         <About />
-        <Projects />
+        {/* <Projects /> */}
         <ChemicalScience />
         {/* <Skills /> */}
-        <Contact />
+        {/* <Contact /> */}
       </motion.main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

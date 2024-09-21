@@ -1,7 +1,8 @@
 // src/components/Header.js
 import React from 'react';
 import { motion } from 'framer-motion';
-import ProfilePhoto from '../assets/Reza_non frml.png'; // Replace this with your own image
+import ProfilePhoto from '../assets/deby.jpg'; // Replace this with your own image
+import CV from '../assets/deby_cv.pdf'; // Replace with your CV PDF file path
 
 const Header = () => {
   return (
@@ -10,9 +11,9 @@ const Header = () => {
       <nav className="container mx-auto flex justify-between items-center py-6 px-4 md:px-8">
         <div className="text-4xl font-extrabold tracking-tight text-purple-700">Deby Calvenia</div>
         <ul className="hidden md:flex space-x-10 text-lg">
-        <li><a href="#about" className="hover:text-purple-500 transition duration-300">Intro</a></li>
+          <li><a href="#intro" className="hover:text-purple-500 transition duration-300">Intro</a></li>
           <li><a href="#about" className="hover:text-purple-500 transition duration-300">About</a></li>
-          <li><a href="#about" className="hover:text-purple-500 transition duration-300">Skills</a></li>
+          <li><a href="#skills" className="hover:text-purple-500 transition duration-300">Skills</a></li>
           <li><a href="#projects" className="hover:text-purple-500 transition duration-300">Projects</a></li>
           <li><a href="#contact" className="hover:text-purple-500 transition duration-300">Contact</a></li>
         </ul>
@@ -31,22 +32,36 @@ const Header = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6 text-purple-700">
-            Crafting Solutions with Passion
+          <h1 className="text-5xl md:text-5xl font-bold mb-6 md:leading-normal text-purple-700">
+            Chemistry Graduate & Aspiring R&D Analyst
           </h1>
 
           <p className="text-lg md:text-xl mb-8 text-gray-600 leading-relaxed">
-            I’m Syah, a driven product manager and developer with a knack for creating efficient, beautiful solutions. Let’s make an impact together!
+            With hands-on lab experience and a passion for data science, I’m skilled in operating advanced equipment and using computational chemistry software. Ready to contribute to innovative research and development.
           </p>
 
-          <motion.a
-            href="#contact"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-block bg-purple-600 text-white font-medium px-10 py-4 rounded-full shadow-lg hover:bg-purple-700 transition-all duration-300 focus:ring-4 focus:ring-purple-300"
-          >
-            Get in Touch
-          </motion.a>
+          <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+            {/* Primary Button: Download CV */}
+            <motion.a
+              href={CV}
+              download="Deby_Calvenia_CV.pdf"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-block bg-purple-600 text-white font-medium px-10 py-4 rounded-full shadow-lg hover:bg-purple-700 transition-all duration-300 focus:ring-4 focus:ring-purple-300"
+            >
+              Download CV
+            </motion.a>
+
+            {/* Secondary Button: Get in Touch */}
+            <motion.a
+              href="#contact"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-block bg-transparent border border-purple-600 text-purple-600 font-medium px-10 py-4 rounded-full shadow-lg hover:bg-purple-600 hover:text-white transition-all duration-300 focus:ring-4 focus:ring-purple-300"
+            >
+              Get in Touch
+            </motion.a>
+          </div>
         </motion.div>
 
         {/* Image Section */}
