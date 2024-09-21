@@ -2,16 +2,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const socialLinks = [
-  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/yourusername' },
-  { name: 'GitHub', url: 'https://github.com/yourusername' },
-  { name: 'Twitter', url: 'https://twitter.com/yourusername' },
+  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/debycalvenianovitasari/' },
+  { name: 'Instagram', url: 'https://www.instagram.com/debycalveniaa' },
   // Add more social media links as needed
 ];
 
 const contactInfo = {
-  email: 'your.email@example.com',
-  phone: '+1 (123) 456-7890',
-  location: 'City, Country'
+  email: 'debycalveniaa29@gmail.com',
+  location: 'Sidoarjo, Indonesia'
 };
 
 const Footer = () => {
@@ -56,7 +54,6 @@ const Footer = () => {
             <h3 className="text-xl font-semibold mb-4">Contact Information</h3>
             <ul className="space-y-2">
               <li>Email: {contactInfo.email}</li>
-              <li>Phone: {contactInfo.phone}</li>
               <li>Location: {contactInfo.location}</li>
             </ul>
           </motion.div>
@@ -71,7 +68,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><a href="#" className="hover:text-purple-300 transition-colors duration-300">Home</a></li>
               <li><a href="#about" className="hover:text-purple-300 transition-colors duration-300">About</a></li>
-              <li><a href="#projects" className="hover:text-purple-300 transition-colors duration-300">Projects</a></li>
+              <li><a href="#chemical-science" className="hover:text-purple-300 transition-colors duration-300">Projects</a></li>
               <li><a href="#contact" className="hover:text-purple-300 transition-colors duration-300">Contact</a></li>
             </ul>
           </motion.div>
@@ -84,7 +81,7 @@ const Footer = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-8 pt-8 border-t border-purple-700 text-center"
         >
-          <p>&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Deby Calvenia. All rights reserved.</p>
         </motion.div>
       </div>
     </footer>

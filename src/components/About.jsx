@@ -4,14 +4,14 @@ import UniversityLogo from '../assets/unej.jpg'; // Add the actual logo of the u
 import BpmFmipaLogo from '../assets/bpm.jpg'; // Add the actual logo for BPM FMIPA
 
 const BeakerIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M9 3h6v4l-3 7.5L15 22H9l3-7.5L9 7V3z"/>
     <path d="M6 10.6V3h12v7.6"/>
   </svg>
 );
 
 const DataIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M21 3v18"/>
     <path d="M18 6v12"/>
     <path d="M15 9v6"/>
@@ -23,7 +23,7 @@ const DataIcon = () => (
 );
 
 const MicroscopeIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M6 18h8"/>
     <path d="M3 22h18"/>
     <path d="M14 22a7 7 0 1 0 0-14h-1"/>
@@ -64,8 +64,8 @@ const About = () => {
       <div className="container mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-extrabold text-indigo-800 mb-4">About Me</h2>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-indigo-800 mb-4">About Me</h2>
+          <p className="text-base md:text-lg text-gray-700 max-w-6xl mx-auto">
             As a Chemistry graduate from Universitas JEMBER, I bring a unique blend of analytical skills and scientific knowledge to the world of Chemical and R&D Analysis, with a strong passion for Data Science. My experience spans from hands-on laboratory work to computational chemistry and data analysis. I'm passionate about leveraging technology to solve complex chemical problems and drive innovation in the field.
           </p>
         </div>
@@ -80,11 +80,11 @@ const About = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <div className="w-24 h-24 rounded-full bg-indigo-100 flex items-center justify-center mb-4 text-indigo-600">
+              <div className="w-16 h-16 md:w-24 md:h-24 rounded-full bg-indigo-100 flex items-center justify-center mb-4 text-indigo-600">
                 <skill.Icon />
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">{skill.name}</h3>
-              <p className="text-gray-600 text-center">Expertise in this area</p>
+              <h3 className="text-lg md:text-xl font-semibold text-gray-800 mb-2">{skill.name}</h3>
+              <p className="text-sm md:text-base text-gray-600 text-center">Expertise in this area</p>
               <div className="w-full bg-gray-200 rounded-full mt-4">
                 <div 
                   className="bg-indigo-500 text-xs font-medium text-white text-center p-0.5 leading-none rounded-full" 
@@ -101,24 +101,24 @@ const About = () => {
         <div>
           <h3 className="text-2xl font-bold text-indigo-800 mb-6">Experience</h3>
           <div className="relative">
-            <div className="absolute left-0 top-0 h-full border-l-2 border-indigo-300"></div>
-            <div className="space-y-8 pl-8">
+            <div className=" hidden md:flex absolute left-0 md:left-4 top-0 h-full border-l-2 border-indigo-300"></div>
+            <div className="space-y-8 pl-0 md:pl-12">
               {experiences.map((exp, index) => (
                 <motion.div 
                   key={exp.id} 
-                  className="flex items-start space-x-4"
+                  className="flex flex-col md:flex-row items-start md:space-x-4"
                   initial={{ opacity: 0, x: -50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-100 border border-gray-300">
+                  <div className="w-16 h-16 md:w-12 md:h-12 rounded-full overflow-hidden bg-gray-100 border border-gray-300 mb-4 md:mb-0 flex-shrink-0">
                     <img src={exp.logo} alt={`${exp.company} logo`} className="w-full h-full object-contain p-1" />
                   </div>
-                  <div>
+                  <div className="md:flex-grow">
                     <h4 className="text-lg font-semibold text-gray-800">{exp.title}</h4>
                     <h5 className="text-md font-medium text-indigo-600 mb-1">{exp.company}</h5>
                     <p className="text-sm text-gray-500 mb-2">{exp.duration}</p>
-                    <p className="text-gray-600">{exp.description}</p>
+                    <p className="text-sm md:text-base text-gray-600">{exp.description}</p>
                   </div>
                 </motion.div>
               ))}
